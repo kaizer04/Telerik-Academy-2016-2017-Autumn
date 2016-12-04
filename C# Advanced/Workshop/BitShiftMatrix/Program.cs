@@ -22,8 +22,8 @@
             moves = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
 
             field = new BigInteger[rows, cols];
-            FillMatrix(field);
-            PrintMatrix(field);
+            FillMatrix();
+            // PrintMatrix(field);
 
             BigInteger sum = 0;
             int[] pos = { rows - 1, 0 };
@@ -57,7 +57,7 @@
                     field[pos[0], pos[1]] = 0;
 
                 }
-                while (pos[0] != targetPos[0] && pos[0] >= 0 && pos[0] < cols);
+                while (pos[0] != targetPos[0] && pos[0] >= 0 && pos[0] < rows);
             }
 
             Console.WriteLine(sum);
@@ -75,13 +75,13 @@
             }
         }
 
-        private static void FillMatrix(BigInteger[,] field)
+        private static void FillMatrix()
         {
             for (int row = 0; row < rows; row++)
             {
                 for (int col = 0; col < cols; col++)
                 {
-                    field[row, col] = 1 << (rows - 1 - row + col);
+                    field[row, col] = (BigInteger)(1) << (rows - 1 - row + col);
                 }
 
             }
