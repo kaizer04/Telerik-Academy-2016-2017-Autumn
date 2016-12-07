@@ -2,18 +2,18 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
+    //using System.IO;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
     public class Program
     {
-        static void MockInput()
-        {
-            var reader = new StringReader(@"KKICXDE3P5");
-            Console.SetIn(reader);
-        }
+        //static void MockInput()
+        //{
+        //    var reader = new StringReader(@"KKICXDE3P5");
+        //    Console.SetIn(reader);
+        //}
 
         static string GetCypherLength(string encrypted)
         {
@@ -120,7 +120,7 @@
 
         public static void Main()
         {
-            MockInput();
+            ////MockInput();
 
             var encryptedMessage = Console.ReadLine();
             var cypherLengthString = GetCypherLength(encryptedMessage);
