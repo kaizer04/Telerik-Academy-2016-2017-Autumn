@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2771BF5F-7AB8-4404-A048-FC799CB2E200}</ProjectGuid>
+    <ProjectGuid>{E843BF86-6C3B-459A-9E3C-760593252E17}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Euclidian3DSpace</RootNamespace>
-    <AssemblyName>Euclidian3DSpace</AssemblyName>
+    <RootNamespace>ImplementMatrix</RootNamespace>
+    <AssemblyName>ImplementMatrix</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DistanceBetween3DPoints.cs" />
-    <Compile Include="Path.cs" />
-    <Compile Include="PathStorage.cs" />
-    <Compile Include="Point3D.cs" />
-    <Compile Include="Test3DSpace.cs" />
+    <Compile Include="Matrix.cs" />
+    <Compile Include="TestMatrixImplement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
