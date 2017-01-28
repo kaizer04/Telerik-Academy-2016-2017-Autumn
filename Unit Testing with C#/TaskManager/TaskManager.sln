@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager", "TaskManager\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaksManager.Tests", "TaksManager.Tests\TaksManager.Tests.csproj", "{C9C26479-DDE2-40A7-A35A-4D32FB6E3B0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.NUnitTests", "TaskManager.NUnitTests\TaskManager.NUnitTests.csproj", "{0DA87A24-F6FB-4C96-9D93-D7231D6299A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C9C26479-DDE2-40A7-A35A-4D32FB6E3B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9C26479-DDE2-40A7-A35A-4D32FB6E3B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9C26479-DDE2-40A7-A35A-4D32FB6E3B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA87A24-F6FB-4C96-9D93-D7231D6299A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA87A24-F6FB-4C96-9D93-D7231D6299A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA87A24-F6FB-4C96-9D93-D7231D6299A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA87A24-F6FB-4C96-9D93-D7231D6299A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
