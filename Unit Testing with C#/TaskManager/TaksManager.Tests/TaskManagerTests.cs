@@ -22,6 +22,16 @@
                 string.Format("Tasks count is {0} whisch is incorect value.", taskManager.TasksCount));
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void AddingNullTaskShouldThrowAnException()
+        {
+            var taskManager = new TaskManager();
+
+            // Act
+            taskManager.AddTask(null);
+        }
+
         // not a test method
         public  void DoSomething()
         {

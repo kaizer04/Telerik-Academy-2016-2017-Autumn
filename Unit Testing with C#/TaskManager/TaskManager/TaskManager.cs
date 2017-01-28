@@ -22,6 +22,11 @@
 
         public void AddTask(Task task)
         {
+            if (task == null)
+            {
+                throw new ArgumentNullException("task");
+            }
+
             this.tasks.Add(task);
             //count++;
         }
