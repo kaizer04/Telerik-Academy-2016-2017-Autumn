@@ -182,5 +182,60 @@ namespace IntergalacticTravel.Tests.TeleportStation
 
             StringAssert.Contains("FREE LUNCH", exc.Message);
         }
+
+        [Test]
+        public void RequestPaymentFromTheUnitThatIsBeingTeleportedWithTheAmountOfPathCost_WhenTheValidationsPassSuccessfullyAndTheUnitsIsReadyForTeleportation()
+        {
+            var ownerMock = new Mock<IBusinessOwner>();
+            var locationMock = new Mock<ILocation>();
+
+            var targetLocationMock = new Mock<ILocation>();
+            var unitToTeleportMock = new Mock<IUnit>();
+
+            var pathMock = new Mock<IPath>();
+            pathMock.Setup(x => x.Cost.BronzeCoins).Returns(10);
+            pathMock.Setup(x => x.Cost.SilverCoins).Returns(10);
+            pathMock.Setup(x => x.Cost.GoldCoins).Returns(10);
+            pathMock.Setup(x => x.TargetLocation.Planet.Name).Returns("Planet One");
+            pathMock.Setup(x => x.TargetLocation.Planet.Galaxy.Name).Returns("Galaxy One");
+
+            var planetaryUnitMock = new Mock<IUnit>();
+            planetaryUnitMock.Setup(x => x.CurrentLocation.Planet.Name).Returns("Planet One");
+            planetaryUnitMock.Setup(x => x.CurrentLocation.Planet.Galaxy.Name).Returns("Galaxy One");
+            planetaryUnitMock.Setup(x => x.CurrentLocation.Coordinates.Latitude).Returns(50d);
+            planetaryUnitMock.Setup(x => x.CurrentLocation.Coordinates.Longtitude).Returns(50d);
+
+            var currentUnitLocationPlanetaryUnitsList = new List<IUnit> { unitToTeleportMock.Object };
+            var planetaryUnitsList = new List<IUnit> { planetaryUnitMock.Object };
+            pathMock.Setup(x => x.TargetLocation.Planet.Units).Returns(planetaryUnitsList);
+
+            var galacticMapMock = new List<IPath> { pathMock.Object };
+
+            var teleportStationMock = new IntergalacticTravel.TeleportStation(ownerMock.Object, galacticMapMock, locationMock.Object);
+
+
+
+            unitToTeleportMock.Setup(x => x.CurrentLocation.Planet.Galaxy.Name).Returns("Galaxy One");
+            unitToTeleportMock.Setup(x => x.CurrentLocation.Planet.Name).Returns("Planet One");
+            unitToTeleportMock.Setup(x => x.CurrentLocation.Coordinates.Latitude).Returns(60d);
+            unitToTeleportMock.Setup(x => x.CurrentLocation.Coordinates.Latitude).Returns(60d);
+            unitToTeleportMock.Setup(x => x.CanPay(It.IsAny<IResources>())).Returns(true);
+            unitToTeleportMock.Setup(x => x.Pay(pathMock.Object.Cost)).Returns(pathMock.Object.Cost);
+            unitToTeleportMock.Setup(x => x.CurrentLocation.Planet.Units).Returns(currentUnitLocationPlanetaryUnitsList);
+
+            targetLocationMock.Setup(x => x.Planet.Name).Returns("Planet One");
+            targetLocationMock.Setup(x => x.Planet.Galaxy.Name).Returns("Galaxy One");
+            targetLocationMock.Setup(x => x.Coordinates.Latitude).Returns(60d);
+            targetLocationMock.Setup(x => x.Coordinates.Longtitude).Returns(60d);
+
+            locationMock.SetupGet(x => x.Planet.Galaxy.Name).Returns("Galaxy One");
+            locationMock.SetupGet(x => x.Planet.Name).Returns("Planet One");
+
+
+            //Assert.Throws<ArgumentNullException>(() => teleportStationMock.TeleportUnit(null, locationMock.Object));
+            teleportStationMock.TeleportUnit(unitToTeleportMock.Object, targetLocationMock.Object);
+
+            unitToTeleportMock.Verify(x => x.Pay(pathMock.Object.Cost), Times.Once());
+        }
     }
 }
