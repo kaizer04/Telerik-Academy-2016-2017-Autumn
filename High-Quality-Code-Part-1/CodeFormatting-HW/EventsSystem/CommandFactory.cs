@@ -4,27 +4,32 @@
 
     public class CommandFactory
     {
-        private static EventHolder events = new EventHolder();
-        
-        public static bool ExecuteNextCommand(string command)
+        public CommandFactory()
+        {
+            this.Events = new EventHolder();
+        }
+
+        public EventHolder Events { get; set; }
+
+        public bool ExecuteNextCommand(string command)
         {
             if (command[0] == 'A')
             {
-                AddEvent(command);
+                this.AddEvent(command);
 
                 return true;
             }
 
             if (command[0] == 'D')
             {
-                DeleteEvents(command);
+                this.DeleteEvents(command);
 
                 return true;
             }
             
             if (command[0] == 'L')
             {
-                ListEvents(command);
+                this.ListEvents(command);
 
                 return true;
             }
@@ -37,47 +42,47 @@
             return true;
         }
 
-        private static void ListEvents(string command)
+        private void ListEvents(string command)
         {
             int pipeIndex = command.IndexOf('|');
 
-            DateTime date = GetDate(command, "ListEvents");
+            var date = this.GetDate(command, "ListEvents");
 
             string countString = command.Substring(pipeIndex + 1);
 
             int count = int.Parse(countString);
             
-            events.ListEvents(date, count);
+            this.Events.ListEvents(date, count);
         }
 
-        private static void DeleteEvents(string command)
+        private void DeleteEvents(string command)
         {
             string title = command.Substring("DeleteEvents".Length + 1);
 
-            events.DeleteEvents(title);
+            this.Events.DeleteEvents(title);
         }
 
-        private static void AddEvent(string command)
+        private void AddEvent(string command)
         {
             DateTime date;
             string title;
             string location;
 
-            GetParameters(command, "AddEvent", out date, out title, out location);
+            this.GetParameters(command, "AddEvent", out date, out title, out location);
 
-            events.AddEvent(date, title, location);
+            this.Events.AddEvent(date, title, location);
         }
 
-        private static void GetParameters(string commandForExecution, string commandType, out DateTime dateAndTime, out string eventTitle, out string eventLocation)
+        private void GetParameters(string commandForExecution, string commandType, out DateTime dateAndTime, out string eventTitle, out string eventLocation)
         {
-            dateAndTime = GetDate(commandForExecution, commandType);
+            dateAndTime = this.GetDate(commandForExecution, commandType);
             int firstPipeIndex = commandForExecution.IndexOf('|');
             int lastPipeIndex = commandForExecution.LastIndexOf('|');
 
             if (firstPipeIndex == lastPipeIndex)
             {
                 eventTitle = commandForExecution.Substring(firstPipeIndex + 1).Trim();
-                eventLocation = "";
+                eventLocation = string.Empty;
             }
             else
             {
@@ -86,9 +91,9 @@
             }
         }
 
-        private static DateTime GetDate(string command, string commandType)
+        private DateTime GetDate(string command, string commandType)
         {
-            DateTime date = DateTime.Parse(command.Substring(commandType.Length + 1, 20));
+            var date = DateTime.Parse(command.Substring(commandType.Length + 1, 20));
 
             return date;
         }

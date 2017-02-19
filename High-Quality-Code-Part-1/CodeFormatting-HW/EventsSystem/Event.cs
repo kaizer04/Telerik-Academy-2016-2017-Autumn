@@ -22,41 +22,41 @@
         {
             Event other = obj as Event;
 
-            int byDate = this.Date.CompareTo(other.Date);
+            int compareByDate = this.Date.CompareTo(other.Date);
 
-            int byTitle = this.Title.CompareTo(other.Title);
+            int compareByTitle = this.Title.CompareTo(other.Title);
 
-            int byLocation = this.Location.CompareTo(other.Location);
+            int compareByLocation = this.Location.CompareTo(other.Location);
 
-            if (byDate == 0)
+            if (compareByDate == 0)
             {
-                if (byTitle == 0)
+                if (compareByTitle == 0)
                 {
-                    return byLocation;
+                    return compareByLocation;
                 }
                 else
                 {
-                    return byTitle;
+                    return compareByTitle;
                 }
             }
             else
             {
-                return byDate;
+                return compareByDate;
             }
         }
 
         public override string ToString()
         {
-            StringBuilder toString = new StringBuilder();
-            toString.Append(this.Date.ToString("yyyy-MM-ddTHH:mm:ss"));
-            toString.Append(" | " + this.Title);
+            var result = new StringBuilder();
+            result.Append(this.Date.ToString("yyyy-MM-ddTHH:mm:ss"));
+            result.Append(" | " + this.Title);
 
             if (this.Location != null && this.Location != string.Empty)
             {
-                toString.Append(" | " + this.Location);
+                result.Append(" | " + this.Location);
             }
 
-            return toString.ToString();
+            return result.ToString();
         }
     }
 }

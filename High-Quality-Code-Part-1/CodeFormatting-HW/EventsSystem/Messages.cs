@@ -2,37 +2,42 @@
 {
     using System.Text;
 
-    public static class Messages
+    public class Messages
     {
-        public static StringBuilder output = new StringBuilder();
-
-        public static void EventAdded()
+        public Messages()
         {
-            output.Append("Event added\n");
+            this.Output = new StringBuilder();
         }
 
-        public static void EventDeleted(int x)
+        public StringBuilder Output { get; set; }
+
+        public void EventAdded()
+        {
+            this.Output.Append("Event added\n");
+        }
+
+        public void EventDeleted(int x)
         {
             if (x == 0)
             {
-                NoEventsFound();
+                this.NoEventsFound();
             }
             else
             {
-                output.AppendFormat("{0} events deleted\n", x);
+                this.Output.AppendFormat("{0} events deleted\n", x);
             }
         }
 
-        public static void NoEventsFound()
+        public void NoEventsFound()
         {
-            output.Append("No events found\n");
+            this.Output.Append("No events found\n");
         }
 
-        public static void PrintEvent(Event eventToPrint)
+        public void PrintEvent(Event eventToPrint)
         {
             if (eventToPrint != null)
             {
-                output.Append(eventToPrint + "\n");
+                this.Output.Append(eventToPrint + "\n");
             }
         }
     }

@@ -1,27 +1,33 @@
 ﻿namespace EventsSystem
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using Wintellect.PowerCollections;
 
     public class EventHolder
     {
-        MultiDictionary<string, Event> eventsListByTitle = new MultiDictionary<string, Event>(true);
-        OrderedBag<Event> eventsListbyDate = new OrderedBag<Event>();
+        public EventHolder()
+        {
+            this.Messages = new Messages();
+            this.EventsListByTitle = new MultiDictionary<string, Event>(true);
+            this.EventsListbyDate = new OrderedBag<Event>();
+        }
+
+        public Messages Messages { get; set; }
+
+        public MultiDictionary<string, Event> EventsListByTitle { get; set; }
+
+        public OrderedBag<Event> EventsListbyDate { get; set; }
 
         public void AddEvent(DateTime date, string title, string location)
         {
             var newEvent = new Event(date, title, location);
 
-            eventsListByTitle.Add(title.ToLower(), newEvent);
+            this.EventsListByTitle.Add(title.ToLower(), newEvent);
 
-            eventsListbyDate.Add(newEvent);
+            this.EventsListbyDate.Add(newEvent);
 
-            Messages.EventAdded();
+            this.Messages.EventAdded();
         }
 
         public void DeleteEvents(string titleToDelete)
@@ -30,20 +36,20 @@
 
             int removed = 0;
 
-            foreach (var eventToRemove in eventsListByTitle[title])
+            foreach (var eventToRemove in this.EventsListByTitle[title])
             {
                 removed++;
-                eventsListbyDate.Remove(eventToRemove);
+                this.EventsListbyDate.Remove(eventToRemove);
             }
 
-            eventsListByTitle.Remove(title);
+            this.EventsListByTitle.Remove(title);
 
-            Messages.EventDeleted(removed);
+            this.Messages.EventDeleted(removed);
         }
         
         public void ListEvents(DateTime date, int count)
         {
-            OrderedBag<Event>.View eventsToShow = eventsListbyDate.RangeFrom(new Event(date, "", ""), true);
+            OrderedBag<Event>.View eventsToShow = this.EventsListbyDate.RangeFrom(new Event(date, string.Empty, string.Empty), true);
 
             int showed = 0;
 
@@ -54,14 +60,14 @@
                     break;
                 }
 
-                Messages.PrintEvent(eventToShow);
+                this.Messages.PrintEvent(eventToShow);
 
                 showed++;
             }
 
             if (showed == 0)
             {
-                Messages.NoEventsFound();
+                this.Messages.NoEventsFound();
             }
         }
     }
