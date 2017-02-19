@@ -9,19 +9,59 @@
         {
             var bunnies = new List<Bunny>
             {
-                new Bunny { Name = "Leonid" , Age= 1, Type = Type.NotFluffy },
-                new Bunny { Age= 2, Name = "Rasputin" , Type = Type.ALittleFluffy },
-                new Bunny { Type = Type.ALittleFluffy, Name = "Tiberii" , Age= 3, },
-                new Bunny { Name = "Neron" , Type = Type.ALittleFluffy, Age= 1 },
-                new Bunny { Name = "Klavdii" , Age= 3, Type = Type.Fluffy },
-                new Bunny { Name = "Vespasian" , Age= 3, Type = Type.Fluffy },
-                new Bunny {Name = "Domician" , Age = 4, Type = Type.FluffyToTheLimit },
-                new Bunny {Name = "Tit" , Age= 2, Type = Type.FluffyToTheLimit }
+                new Bunny
+                {
+                    Name = "Leonid",
+                    Age = 1,
+                    Type = Type.NotFluffy
+                },
+                new Bunny
+                {
+                    Name = "Rasputin",
+                    Age = 2,
+                    Type = Type.ALittleFluffy
+                },
+                new Bunny
+                {
+                    Name = "Tiberii",
+                    Age = 3,
+                    Type = Type.ALittleFluffy
+                },
+                new Bunny
+                {
+                    Name = "Neron",
+                    Age = 1,
+                    Type = Type.ALittleFluffy
+                },
+                new Bunny
+                {
+                    Name = "Klavdii",
+                    Age = 3,
+                    Type = Type.Fluffy
+                },
+                new Bunny
+                {
+                    Name = "Vespasian",
+                    Age = 3,
+                    Type = Type.Fluffy
+                },
+                new Bunny
+                {
+                    Name = "Domician",
+                    Age = 4,
+                    Type = Type.FluffyToTheLimit
+                },
+                new Bunny
+                {
+                    Name = "Tit",
+                    Age = 2,
+                    Type = Type.FluffyToTheLimit
+                }
             };
 
             var consoleWriter = new ConsoleWriter();
 
-            foreach ( var bunny in bunnies)
+            foreach (var bunny in bunnies)
             {
                 bunny.Introduce(consoleWriter);
             }
