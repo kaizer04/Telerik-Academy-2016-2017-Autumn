@@ -1,6 +1,6 @@
-﻿namespace Computers3
+﻿namespace Computers.UI
 {
-    class LaptopBattery
+    public class LaptopBattery
     {
         internal int Percentage { get; set; }
         internal void Charge(int p)
