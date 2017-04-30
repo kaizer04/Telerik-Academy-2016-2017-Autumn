@@ -3,6 +3,7 @@
     using System.Collections.Generic;
 
     using Cpus;
+    using VideoCards;
 
     public abstract class Computer
     {

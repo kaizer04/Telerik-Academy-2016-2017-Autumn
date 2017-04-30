@@ -3,6 +3,7 @@
     using System.Collections.Generic;
 
     using Cpus;
+    using VideoCards;
 
     public class Server : Computer
     {
@@ -13,7 +14,6 @@
             VideoCard videoCard)
             : base(cpu, ram, hardDrives, videoCard)
         {
-            this.VideoCard.IsMonochrome = true;
         }
         
         public void Process(int data)

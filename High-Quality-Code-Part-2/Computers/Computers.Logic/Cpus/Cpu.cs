@@ -2,6 +2,8 @@
 {
     using System;
 
+    using VideoCards;
+
     public abstract class Cpu
     {
         private static readonly Random Random = new Random();
