@@ -5,7 +5,7 @@
     using ComputerTypes;
     using Manufacturers;
 
-    public class Computers
+    public static class Program
     {
         private static PersonalComputer pc;
         private static Laptop laptop;
