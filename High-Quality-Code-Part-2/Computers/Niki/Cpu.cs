@@ -19,7 +19,7 @@
             this.videoCard = videoCard;
         }
 
-        public byte NumberOfCores { get; set; }
+        private byte NumberOfCores { get; set; }
 
         public void SquareNumber()
         {

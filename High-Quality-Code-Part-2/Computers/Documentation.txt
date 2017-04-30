@@ -21,9 +21,9 @@ Found bottlenecks:
 	* 
 
 Found bugs:
-	* When invalid comman name is given the program does not output message "Invalid command!"
-	* 
-	* 
+	* When invalid command name is given the program does not output message "Invalid command!"
+	* When "process" command is executed NullReferenceException is thrown
+	* System.Collections.Generic.dll with single class was referenced in our assembly
 
 Single responsibility principle
 	* 
