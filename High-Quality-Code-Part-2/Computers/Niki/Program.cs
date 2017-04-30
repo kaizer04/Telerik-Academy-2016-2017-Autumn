@@ -2,8 +2,9 @@
 {
     using System;
 
-    using ComputerTypes;
-    using Manufacturers;
+    using Logic;
+    using Logic.ComputerTypes;
+    using Logic.Manufacturers;
 
     public static class Program
     {
