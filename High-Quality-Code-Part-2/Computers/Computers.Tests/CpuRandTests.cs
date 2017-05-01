@@ -1,12 +1,14 @@
 ﻿namespace Computers.Tests
 {
-    using Logic;
-    using Logic.Cpus;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Moq;
     using System;
     using System.Collections.Generic;
 
+    using Logic;
+    using Logic.Cpus;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Moq;
+    
     [TestClass]
     public class CpuRandTests
     {
