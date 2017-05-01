@@ -5,6 +5,7 @@
     using ComputerTypes;
     using Cpus;
     using VideoCards;
+    using HardDrives;
 
     public class LenovoComputersFactory : IComputersFactory
     {
@@ -16,7 +17,7 @@
             var laptop = new Laptop(
                 new Cpu64(2, ram, videoCard),
                 ram,
-                new[] { new HardDrive(1000, false, 0) },
+                new[] { new SingleHardDrive(1000) },
                 videoCard,
                 new LaptopBattery());
 
@@ -31,7 +32,7 @@
             var pc = new PersonalComputer(
                 new Cpu64(2, ram, videoCard),
                 ram,
-                new[] { new HardDrive(2000, false, 0) },
+                new[] { new SingleHardDrive(2000) },
                 videoCard);
 
             return pc;
@@ -45,14 +46,7 @@
             var server = new Server(
                 new Cpu128(2, ram, videoCard),
                 ram,
-                new List<HardDrive>
-                {
-                            new HardDrive(
-                                0,
-                                true,
-                                2,
-                                new List<HardDrive> { new HardDrive(500, false, 0), new HardDrive(500, false, 0) })
-                },
+                new List<HardDrive> { new RaidArray(new List<HardDrive> { new SingleHardDrive(500), new SingleHardDrive(500) }) },
                 videoCard);
 
             return server;

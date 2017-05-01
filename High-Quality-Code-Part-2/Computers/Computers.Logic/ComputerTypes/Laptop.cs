@@ -4,6 +4,7 @@
 
     using Cpus;
     using VideoCards;
+    using HardDrives;
 
     public class Laptop : Computer
     {
