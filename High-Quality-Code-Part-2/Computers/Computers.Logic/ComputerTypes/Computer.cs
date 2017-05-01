@@ -12,7 +12,7 @@
 
         public Computer(
             Cpu cpu,
-            Ram ram,
+            IRam ram,
             IEnumerable<HardDrive> hardDrives,
             VideoCard videoCard)
         {
@@ -29,6 +29,6 @@
 
         protected Cpu Cpu { get; set; }
 
-        protected Ram Ram { get; set; }
+        protected IRam Ram { get; set; }
     }
 }

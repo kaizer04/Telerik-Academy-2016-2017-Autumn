@@ -9,14 +9,14 @@
     public class Laptop : Computer
     {
         // TODO: Battery in all computers
-        private readonly LaptopBattery battery;
+        private readonly ILaptopBattery battery;
 
         public Laptop(
             Cpu cpu,
             Ram ram,
             IEnumerable<HardDrive> hardDrives,
             VideoCard videoCard,
-            LaptopBattery battery)
+            ILaptopBattery battery)
             : base(cpu, ram, hardDrives, videoCard)
         {
             this.battery = battery;

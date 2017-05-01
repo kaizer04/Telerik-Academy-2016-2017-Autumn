@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="HardDrives\RaidArray.cs" />
     <Compile Include="HardDrives\SingleHardDrive.cs" />
+    <Compile Include="ILaptopBattery.cs" />
     <Compile Include="IMotherboardComponent.cs" />
+    <Compile Include="IRam.cs" />
     <Compile Include="Motherboard.cs" />
     <Compile Include="VideoCards\ColorfulVideoCard.cs" />
     <Compile Include="ComputerTypes\Computer.cs" />
