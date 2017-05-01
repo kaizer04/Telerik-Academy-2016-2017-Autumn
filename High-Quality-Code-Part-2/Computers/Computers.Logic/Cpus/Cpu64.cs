@@ -2,7 +2,7 @@
 {
     public class Cpu64 : Cpu
     {
-        const int MaxValue = 1000;
+        private const int MaxValue = 1000;
 
         public Cpu64(byte numberOfCores)
             : base(numberOfCores)

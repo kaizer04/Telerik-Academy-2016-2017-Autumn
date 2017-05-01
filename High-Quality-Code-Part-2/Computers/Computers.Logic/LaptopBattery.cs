@@ -2,9 +2,10 @@
 {
     public class LaptopBattery : ILaptopBattery
     {
-        private const int DefaultBatteryPercentage = 100 / 2;
         public const int MinBatteryPercentage = 0;
         public const int MaxBatteryPercentage = 100;
+
+        private const int DefaultBatteryPercentage = 100 / 2;
 
         public LaptopBattery()
         {

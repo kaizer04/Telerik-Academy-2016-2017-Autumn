@@ -32,7 +32,6 @@
             var manufacturerName = Console.ReadLine();
             IComputersFactory computerFactory = manufacturerFactory.GetManufacturer(manufacturerName);
             
-
             pc = computerFactory.CreatePersonalComputer();
 
             laptop = computerFactory.CreateLaptop();
@@ -45,26 +44,26 @@
             // TODO: Command design pattern
             while (true)
             {
-                var input = Console.ReadLine();
-                if (input == null)
+                var userInput = Console.ReadLine();
+                if (userInput == null)
                 {
                     break;
                 }
 
-                if (input.StartsWith(ExitCommandName))
+                if (userInput.StartsWith(ExitCommandName))
                 {
                     break;
                 }
 
-                var cp = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                if (cp.Length != 2)
+                var commandParts = userInput.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                if (commandParts.Length != 2)
                 {
                     throw new ArgumentException(InvalidCommandMessage);
                 }
 
                 // Preocess commands
-                var commandName = cp[0];
-                var commandArgument = int.Parse(cp[1]);
+                var commandName = commandParts[0];
+                var commandArgument = int.Parse(commandParts[1]);
 
                 if (commandName == ChargeCommandName)
                 {

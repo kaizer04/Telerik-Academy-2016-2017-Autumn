@@ -5,8 +5,8 @@
 
     public class Motherboard : IMotherboard
     {
-        public Motherboard(Cpu cpu,IRam ram, VideoCard videoCard)
-        {
+        public Motherboard(Cpu cpu, IRam ram, VideoCard videoCard)
+        { 
             cpu.AttachTo(this);
             this.Ram = ram;
             this.VideoCard = videoCard;
