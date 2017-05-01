@@ -6,8 +6,7 @@
     using Cpus;
     using HardDrives;
     using VideoCards;
-
-    // TODO: Fix naming
+    
     public class DellComputersFactory : IComputersFactory
     {
         public const string Name = "Dell";

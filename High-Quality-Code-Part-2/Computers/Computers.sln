@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Computers.UI", "Niki\Computers.UI.csproj", "{920382DC-166F-4C55-8AF7-70D668191107}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Computers.Logic", "Computers.Logic\Computers.Logic.csproj", "{04A3E72F-370E-4277-90C5-8E1F30FF55C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Computers.Tests", "Computers.Tests\Computers.Tests.csproj", "{541AA3B0-CAB9-4335-AE58-7FF289AB07DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Computers.UI", "Computers.UI\Computers.UI.csproj", "{920382DC-166F-4C55-8AF7-70D668191107}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{920382DC-166F-4C55-8AF7-70D668191107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{920382DC-166F-4C55-8AF7-70D668191107}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{920382DC-166F-4C55-8AF7-70D668191107}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{920382DC-166F-4C55-8AF7-70D668191107}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04A3E72F-370E-4277-90C5-8E1F30FF55C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04A3E72F-370E-4277-90C5-8E1F30FF55C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04A3E72F-370E-4277-90C5-8E1F30FF55C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{541AA3B0-CAB9-4335-AE58-7FF289AB07DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{541AA3B0-CAB9-4335-AE58-7FF289AB07DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{541AA3B0-CAB9-4335-AE58-7FF289AB07DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{920382DC-166F-4C55-8AF7-70D668191107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{920382DC-166F-4C55-8AF7-70D668191107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{920382DC-166F-4C55-8AF7-70D668191107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{920382DC-166F-4C55-8AF7-70D668191107}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

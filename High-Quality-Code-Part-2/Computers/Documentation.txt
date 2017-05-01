@@ -26,19 +26,25 @@ Found bugs:
 	* When invalid command name is given the program does not output message "Invalid command!"
 	* When "process" command is executed NullReferenceException is thrown
 	* System.Collections.Generic.dll with single class was referenced in our assembly
-	* When printig battery status the "%" is missing
+	* When printing battery status the "%" sign is missing
 
 Single responsibility principle
-	* 
+	* All manufacturer are responsible only for creating computers
+	* VideoCard is responsible for printing, HardDrive is responsible for saveing data
+	* Laptop, Server and PC are separate classes
 
 Open/closed principle
-	* 
+	* The RAM memory can be interganged by the client wihout touching the original code
+	* The laptop battery can be interganged by the client wihout touching the original code
 
 Liskov substitution principle
-	* 
+	* All inheritants can be used instead of their parent without problems
+	* All classes are intergangeable without problems
 
 Interface segregation principle
-	* 
+	* All interfaces are small and well-defined
 
 Dependency inversion principle
-	* 
+	* Computer ram should be passed in Computer.ctro()
+	* Laptop expects ILaptopBattery which gives us the possibillity of defining own ILaptopBattery
+	* SquareNumberShouldOutputCorrectValues -> Cpu.AttachTo expects interface which is used in SquareNumberShouldOutputCorrectValues
