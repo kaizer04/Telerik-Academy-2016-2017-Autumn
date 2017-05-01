@@ -4,23 +4,25 @@
 
     using VideoCards;
 
-    public abstract class Cpu
+    public abstract class Cpu : IMotherboardComponent
     {
         private static readonly Random Random = new Random();
         
-        private readonly Ram ram;
-        private readonly VideoCard videoCard;
+        private IMotherboard motherboard;
 
         // TODO: Should CPU to know about RAM and VideoCard
-        internal Cpu(byte numberOfCores, Ram ram, VideoCard videoCard)
+        internal Cpu(byte numberOfCores)
         {
             this.NumberOfCores = numberOfCores;
-            this.ram = ram;
-            this.videoCard = videoCard;
         }
 
         private byte NumberOfCores { get; set; }
-        
+
+        public void AttachTo(IMotherboard motherboard)
+        {
+            this.motherboard = motherboard;
+        }
+
         public void Rand(int a, int b)
         {
             int randomNumber;
@@ -30,19 +32,19 @@
             }
             while (!(randomNumber >= a && randomNumber <= b));
 
-            this.ram.SaveValue(randomNumber);
+            this.motherboard.SaveRamValue(randomNumber);
         }
 
         public void SquareNumber()
         {
-            var data = this.ram.LoadValue();
+            var data = this.motherboard.LoadRamValue();
             if (data < 0)
             {
-                this.videoCard.Draw("Number too low.");
+                this.motherboard.DrawOnVideoCard("Number too low.");
             }
             else if (data > this.GetMaxValue())
             {
-                this.videoCard.Draw("Number too high.");
+                this.motherboard.DrawOnVideoCard("Number too high.");
             }
             else
             {
@@ -52,7 +54,7 @@
                     value += data;
                 }
 
-                this.videoCard.Draw(string.Format("Square of {0} is {1}.", data, value));
+                this.motherboard.DrawOnVideoCard(string.Format("Square of {0} is {1}.", data, value));
             }
         }
 
