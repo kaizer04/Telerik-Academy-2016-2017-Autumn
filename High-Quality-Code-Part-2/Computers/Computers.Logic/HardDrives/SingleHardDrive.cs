@@ -6,13 +6,12 @@
     {
         private int capacity;
 
-        protected Dictionary<int, string> data;
+        private Dictionary<int, string> data;
 
         public SingleHardDrive(int capacity)
         {
             this.capacity = capacity;
             this.data = new Dictionary<int, string>(capacity);
-            
         }
 
         public override int Capacity

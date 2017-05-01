@@ -4,8 +4,8 @@
 
     using ComputerTypes;
     using Cpus;
-    using VideoCards;
     using HardDrives;
+    using VideoCards;
 
     // TODO: Fix naming
     public class DellComputersFactory : IComputersFactory

@@ -3,8 +3,8 @@
     using System.Collections.Generic;
 
     using Cpus;
-    using VideoCards;
     using HardDrives;
+    using VideoCards;
 
     public abstract class Computer
     {

@@ -1,12 +1,11 @@
 ﻿namespace Computers.Logic.Manufacturers
 {
-    using System;
     using System.Collections.Generic;
 
     using ComputerTypes;
     using Cpus;
-    using VideoCards;
     using HardDrives;
+    using VideoCards;
 
     public class HpComputersFactory : IComputersFactory
     {
