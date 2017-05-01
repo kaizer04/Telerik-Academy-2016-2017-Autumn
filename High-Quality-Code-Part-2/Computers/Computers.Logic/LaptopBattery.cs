@@ -2,9 +2,13 @@
 {
     public class LaptopBattery : ILaptopBattery
     {
+        private const int DefaultBatteryPercentage = 100 / 2;
+        public const int MinBatteryPercentage = 0;
+        public const int MaxBatteryPercentage = 100;
+
         public LaptopBattery()
         {
-            this.Percentage = 100 / 2;
+            this.Percentage = DefaultBatteryPercentage;
         }
 
         public int Percentage { get; set; }
@@ -12,14 +16,14 @@
         public void Charge(int percentage)
         {
             this.Percentage += percentage;
-            if (this.Percentage > 100)
+            if (this.Percentage > MaxBatteryPercentage)
             {
-                this.Percentage = 100;
+                this.Percentage = MaxBatteryPercentage;
             }
 
-            if (this.Percentage < 0)
+            if (this.Percentage < MinBatteryPercentage)
             {
-                this.Percentage = 0;
+                this.Percentage = MinBatteryPercentage;
             }
         }
     }

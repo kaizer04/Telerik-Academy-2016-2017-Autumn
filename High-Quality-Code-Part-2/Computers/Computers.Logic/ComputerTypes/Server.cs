@@ -8,7 +8,7 @@
 
     public class Server : Computer
     {
-        internal Server(
+        public Server(
             Cpu cpu,
             Ram ram,
             IEnumerable<HardDrive> hardDrives,
@@ -21,7 +21,6 @@
         {
             this.Ram.SaveValue(data);
 
-            // TODO: Fix it
             Cpu.SquareNumber();
         }
     }

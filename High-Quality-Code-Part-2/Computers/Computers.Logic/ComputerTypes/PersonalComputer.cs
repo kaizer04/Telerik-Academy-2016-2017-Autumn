@@ -8,7 +8,10 @@
 
     public class PersonalComputer : Computer
     {
-        internal PersonalComputer(
+        private const string WrongNumberStringFormat = "You didn't guess the number {0}.";
+        private const string WinMessage = "You win!";
+
+        public PersonalComputer(
             Cpu cpu,
             Ram ram,
             IEnumerable<HardDrive> hardDrives,
@@ -23,11 +26,11 @@
             var number = this.Ram.LoadValue();
             if (number + 1 != guessNumber + 1)
             {
-                this.VideoCard.Draw(string.Format("You didn't guess the number {0}.", number));
+                this.VideoCard.Draw(string.Format(WrongNumberStringFormat, number));
             }
             else
             {
-                this.VideoCard.Draw("You win!");
+                this.VideoCard.Draw(WinMessage);
             }
         }
     }

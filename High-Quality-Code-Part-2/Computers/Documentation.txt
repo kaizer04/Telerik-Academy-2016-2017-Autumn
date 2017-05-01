@@ -1,8 +1,10 @@
 Design pattern: Simple Factory
-	* In Program class, method CreateComputers is simple factory creating different types of IComputersFactory based on user input
+	* In ManufacturerFactory class, method GetManufacturer is simple factory creating different types of IComputersFactory based on given string
 
 Design pattern: Strategy
-	* 
+	* In Laptop constructor the battery can vary
+	* Cpu can work with any IMotherboard components
+	* In Computer constructor IRam can vary
 
 Design pattern: Template Method
 	* Cpu has method SquareNumber which uses the abstract method GetMaxValue which is implemented in Cpu32, Cpu64 and Cpu128
@@ -11,13 +13,13 @@ Design pattern: Abstract factory
 	* Introduced IComputersFactory as a base class for HpComputersFactory and DellComputersFactory which creates different types of computers
 
 Design pattern: Composite
-	* 
+	* SingleHardDrive and RaidArray are both HardDrives and RaidArray contains other HardDrives
 
 Design pattern: Mediator
-	* 
+	* Motherboard is mediator for all computer components (e.g. Cpu)
 
 Found bottlenecks:
-	* 
+	* In Cpu.Rand method getting random number is in while loop which slows down the operation
 	* 
 
 Found bugs:

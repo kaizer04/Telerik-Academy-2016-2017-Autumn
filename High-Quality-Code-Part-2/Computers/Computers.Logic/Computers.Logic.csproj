@@ -46,6 +46,7 @@
     <Compile Include="ILaptopBattery.cs" />
     <Compile Include="IMotherboardComponent.cs" />
     <Compile Include="IRam.cs" />
+    <Compile Include="Manufacturers\ManufacturerFactory.cs" />
     <Compile Include="Motherboard.cs" />
     <Compile Include="VideoCards\ColorfulVideoCard.cs" />
     <Compile Include="ComputerTypes\Computer.cs" />
