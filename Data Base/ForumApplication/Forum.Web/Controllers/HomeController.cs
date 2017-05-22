@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forum.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,13 +11,16 @@ namespace Forum.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var dbContext = new ForumDbContext();
+
+            var categories = dbContext.Categories.ToList();
+            this.ViewBag.Categories = categories.Count;
+
+            return this.View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 

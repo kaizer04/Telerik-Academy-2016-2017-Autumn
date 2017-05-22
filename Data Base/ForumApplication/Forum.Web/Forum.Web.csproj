@@ -279,6 +279,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Forum.Data\Forum.Data.csproj">
+      <Project>{6fbc5580-2165-41ab-b8ca-b265c160cf8e}</Project>
+      <Name>Forum.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Forum.Models\Forum.Models.csproj">
+      <Project>{5bedc7e8-bd0e-4eab-87d0-d29d39f2cfe1}</Project>
+      <Name>Forum.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

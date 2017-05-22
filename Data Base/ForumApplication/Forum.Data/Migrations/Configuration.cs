@@ -5,7 +5,7 @@ namespace Forum.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Forum.Data.ForumDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<Forum.Data.ForumDbContext>
     {
         public Configuration()
         {

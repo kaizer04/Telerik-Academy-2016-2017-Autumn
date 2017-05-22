@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6FBC5580-2165-41AB-B8CA-B265C160CF8E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{4EDBB528-FABF-42A7-A7D1-381B197572F3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Forum.Data</RootNamespace>
-    <AssemblyName>Forum.Data</AssemblyName>
+    <RootNamespace>Forum.ConsoleClient</RootNamespace>
+    <AssemblyName>Forum.ConsoleClient</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,12 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForumDbContext.cs" />
-    <Compile Include="Migrations\201705211855009_Initial.cs" />
-    <Compile Include="Migrations\201705211855009_Initial.Designer.cs">
-      <DependentUpon>201705211855009_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,15 +60,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Forum.Data\Forum.Data.csproj">
+      <Project>{6fbc5580-2165-41ab-b8ca-b265c160cf8e}</Project>
+      <Name>Forum.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Forum.Models\Forum.Models.csproj">
       <Project>{5bedc7e8-bd0e-4eab-87d0-d29d39f2cfe1}</Project>
       <Name>Forum.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705211855009_Initial.resx">
-      <DependentUpon>201705211855009_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

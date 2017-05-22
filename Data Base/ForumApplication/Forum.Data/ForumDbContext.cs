@@ -15,7 +15,7 @@ namespace Forum.Data
 
         public DbSet<Category> Categories { get; set; }
 
-        public DbSet<PostAnswer> PostAnswers { get; set; }
+        public DbSet<PostAnswer> Answers { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
     }

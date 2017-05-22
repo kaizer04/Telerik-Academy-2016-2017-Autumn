@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Data", "Forum.Data\Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Web", "Forum.Web\Forum.Web.csproj", "{F76D8C3F-890F-4CE6-9462-909201BC1DD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.ConsoleClient", "Forum.ConsoleClient\Forum.ConsoleClient.csproj", "{4EDBB528-FABF-42A7-A7D1-381B197572F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Data.Common", "Forum.Data.Common\Forum.Data.Common.csproj", "{280A1341-3131-466F-97E6-57CD3267DBA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{F76D8C3F-890F-4CE6-9462-909201BC1DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F76D8C3F-890F-4CE6-9462-909201BC1DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F76D8C3F-890F-4CE6-9462-909201BC1DD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EDBB528-FABF-42A7-A7D1-381B197572F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EDBB528-FABF-42A7-A7D1-381B197572F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EDBB528-FABF-42A7-A7D1-381B197572F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EDBB528-FABF-42A7-A7D1-381B197572F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280A1341-3131-466F-97E6-57CD3267DBA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280A1341-3131-466F-97E6-57CD3267DBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280A1341-3131-466F-97E6-57CD3267DBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280A1341-3131-466F-97E6-57CD3267DBA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
