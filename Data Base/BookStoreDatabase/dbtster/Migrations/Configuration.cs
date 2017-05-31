@@ -1,0 +1,24 @@
+namespace dbtster.Migrations
+{
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+   public sealed class Configuration : DbMigrationsConfiguration<dbtster.BookStoreDbContext>
+    {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
+        }
+
+        protected override void Seed(dbtster.BookStoreDbContext context)
+        {
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data.
+        }
+    }
+}
