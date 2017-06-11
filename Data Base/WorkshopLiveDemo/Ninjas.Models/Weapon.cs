@@ -15,6 +15,8 @@ namespace Ninjas.Models
 
         public double Damage { get; set; }
 
+        public string Material { get; set; }
+
         public virtual ICollection<Ninja> Ninjas { get; set; }
     }
 }

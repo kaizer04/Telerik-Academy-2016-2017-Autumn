@@ -49,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201706111127441_AddedGendrToNinjaModel.cs" />
+    <Compile Include="Migrations\201706111127441_AddedGendrToNinjaModel.Designer.cs">
+      <DependentUpon>201706111127441_AddedGendrToNinjaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NinjasDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +66,11 @@
       <Project>{5ba3dce8-9ae8-4942-aa21-8500a36cd18a}</Project>
       <Name>Ninjas.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706111127441_AddedGendrToNinjaModel.resx">
+      <DependentUpon>201706111127441_AddedGendrToNinjaModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

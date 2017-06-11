@@ -19,6 +19,8 @@ namespace Ninjas.Models
 
         public NinjaType Type { get; set; }
 
+        public bool IsFemale { get; set; }
+
         public virtual ICollection<Weapon> Weapons { get; set; }
     }
 }
