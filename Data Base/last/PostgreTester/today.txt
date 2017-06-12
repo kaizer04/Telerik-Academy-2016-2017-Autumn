@@ -1,0 +1,3 @@
+node node_modules/db-migrate/bin/db-migrate create filename
+node node_modules/db-migrate/bin/db-migrate create alabash --migrations-dir "c:/Users/Misho/Desktop/repo/trunk/PostgreTester" --config "c:/Users/Misho/Desktop/repo/trunk/PostgreTester/database.json"  ///the way
+node node_modules/db-migrate/bin/db-migrate up --migrations-dir "c:/Users/Misho/Desktop/repo/trunk/PostgreTester

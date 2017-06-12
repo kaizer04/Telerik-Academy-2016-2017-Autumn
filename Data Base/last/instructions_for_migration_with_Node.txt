@@ -1,0 +1,80 @@
+http://rob.conery.io/2014/02/05/using-entity-framework-6-with-postgresql/
+
+
+Wlizam v node.js i ot c:/users/misho , kudeto sa node_modules, pi6a
+
+node node_modules/db-migrate/bin/db-migrate create filename-format  na komandata za pravene na migration s ime filename
+node node_modules/db-migrate/bin/db-migrate create alabash --migrations-dir "c:/Users/Misho/Desktop/repo/trunk/PostgreTester" --config "c:/Users/Misho/Desktop/repo/trunk/PostgreTester/database.json"  ///the way
+node node_modules/db-migrate/bin/db-migrate up --migrations-dir "c:/Users/Misho/Desktop/repo/trunk/PostgreTester
+///migration-alabash.js
+creates file, where I can write
+
+exports.up = function (db, callback) {
+  db.createTable('pets', {
+    id: { type: 'serial', primaryKey: true },
+    name: 'string'
+  }, callback);
+};
+
+exports.down = function (db, callback) {
+  db.dropTable('pets', callback);
+};
+
+
+///database.json -s wtoriqt red pokazvam kude e migraciqta i kude e json file
+///s tretata realiziram
+
+
+//////a tova e json file//////////////////
+{
+  "dev": "postgres://rob:password@localhost/petstore",
+
+  "test": {
+    "driver": "sqlite3",
+    "filename": ":memory:"
+  },
+
+  "prod": {
+    "driver": "pg",
+    "user": "joe",
+    "password": "toottoot",
+    "database": "petstore"
+  }
+}
+rob-username, password-pass... v Postgre ili kakwato tam e bazata, ima varianti
+
+https://db-migrate.readthedocs.io/en/latest/Getting%20Started/installation/
+
+
+
+app.config
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+  </startup>
+  <system.data>
+    <DbProviderFactories>
+      <add name="Npgsql Data Provider" invariant="Npgsql" description="Data Provider for PostgreSQL" type="Npgsql.NpgsqlFactory, Npgsql" />
+    </DbProviderFactories>
+  </system.data>
+  <connectionStrings>
+        <add name="alabash1" connectionString="server=localhost;user id=misho;password=vinetu41;database=petshop" providerName="Npgsql" />
+    </connectionStrings>
+
+
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
+    <providers>
+      <provider invariantName="Npgsql" type="Npgsql.NpgsqlServices, Npgsql.EntityFramework" />
+    </providers>
+  </entityFramework>
+ </configuration>
+
+
