@@ -4,6 +4,7 @@ using SchoolSystem.Framework.Core.Commands.Contracts;
 using SchoolSystem.Framework.Models;
 using SchoolSystem.Framework.Models.Enums;
 using SchoolSystem.Framework.Core.Contracts;
+using SchoolSystem.Framework.Models.Contracts;
 
 namespace SchoolSystem.Framework.Core.Commands
 {
@@ -11,10 +12,12 @@ namespace SchoolSystem.Framework.Core.Commands
     {
         private static int currentTeacherId = 0;
         private readonly ITeacherFactory teacherFactory;
+        private readonly IAddTeacher addTeacher;
 
-        public CreateTeacherCommand(ITeacherFactory teacherFactory)
+        public CreateTeacherCommand(ITeacherFactory teacherFactory, IAddTeacher addTeacher)
         {
             this.teacherFactory = teacherFactory;
+            this.addTeacher = addTeacher;
         }
 
         public string Execute(IList<string> parameters)
@@ -25,7 +28,7 @@ namespace SchoolSystem.Framework.Core.Commands
 
             //var teacher = new Teacher(firstName, lastName, subject);
             var teacher = this.teacherFactory.CreateTeacher(firstName, lastName, subject);
-            Engine.Teachers.Add(currentTeacherId, teacher);
+            this.addTeacher.AddTeacher(currentTeacherId, teacher);
 
             return $"A new teacher with name {firstName} {lastName}, subject {subject} and ID {currentTeacherId++} was created.";
         }

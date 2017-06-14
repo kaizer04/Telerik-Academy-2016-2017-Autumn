@@ -38,15 +38,8 @@ namespace SchoolSystem.Framework.Core
             this.reader = readerProvider;
             this.writer = writerProvider;
             this.parser = parserProvider;
-
-            Teachers = new Dictionary<int, ITeacher>();
-            Students = new Dictionary<int, IStudent>();
         }
-
-        public static IDictionary<int, ITeacher> Teachers { get; set; }
-
-        public static IDictionary<int, IStudent> Students { get; set; }
-
+        
         public void Start()
         {
             while (true)
