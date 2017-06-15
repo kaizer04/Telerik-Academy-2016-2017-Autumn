@@ -19,10 +19,10 @@ namespace SchoolSystem.Framework.Core.Commands
         {
             var teacherId = int.Parse(parameters[0]);
 
-            if (this.removeTeacher.RemoveTeacher(teacherId) == null)
-            {
-                throw new ArgumentException("The given key was not present in the dictionary.");
-            }
+            //if (this.removeTeacher.RemoveTeacher(teacherId) == null)
+            //{
+            //    throw new ArgumentException("The given key was not present in the dictionary.");
+            //}
 
             this.removeTeacher.RemoveTeacher(teacherId);
             return $"Teacher with ID {teacherId} was sucessfully removed.";

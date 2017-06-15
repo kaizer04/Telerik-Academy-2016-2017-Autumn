@@ -3,6 +3,7 @@ using Ninject.Extensions.Conventions;
 using Ninject.Modules;
 using SchoolSystem.Cli.Configuration;
 using SchoolSystem.Framework.Core;
+using SchoolSystem.Framework.Core.Commands;
 using SchoolSystem.Framework.Core.Contracts;
 using SchoolSystem.Framework.Core.Providers;
 using SchoolSystem.Framework.Models;
@@ -28,6 +29,9 @@ namespace SchoolSystem.Cli
             Kernel.Bind<IWriter>().To<ConsoleWriterProvider>();
             Kernel.Bind<IParser>().To<CommandParserProvider>();
             Kernel.Bind<IStudent>().To<Student>();
+
+            Kernel.Bind<CreateStudentCommand>().ToSelf().InSingletonScope();
+            Kernel.Bind<CreateTeacherCommand>().ToSelf().InSingletonScope();
 
             Kernel.Bind<Engine>().To<Engine>().InSingletonScope();
 

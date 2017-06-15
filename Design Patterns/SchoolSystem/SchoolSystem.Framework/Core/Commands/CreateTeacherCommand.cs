@@ -10,7 +10,7 @@ namespace SchoolSystem.Framework.Core.Commands
 {
     public class CreateTeacherCommand : ICommand
     {
-        private static int currentTeacherId = 0;
+        private int currentTeacherId = 0;
         private readonly ITeacherFactory teacherFactory;
         private readonly IAddTeacher addTeacher;
 

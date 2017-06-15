@@ -17,7 +17,7 @@ namespace SchoolSystem.Framework.Core.Commands
 
     public class CreateStudentCommand : ICommand
     {
-        private static int currentStudentId = 0;
+        private int currentStudentId = 0;
         private readonly IStudentFactory studentFactory;
         private readonly IAddStudent addStudent;
 
