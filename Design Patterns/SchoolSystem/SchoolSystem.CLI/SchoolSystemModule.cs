@@ -1,9 +1,11 @@
 ﻿using Ninject;
 using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Factory;
+using Ninject.Extensions.Interception.Infrastructure.Language;
 using Ninject.Modules;
 using Ninject.Parameters;
 using SchoolSystem.Cli.Configuration;
+using SchoolSystem.Cli.Interceptors;
 using SchoolSystem.Framework.Contracts;
 using SchoolSystem.Framework.Core;
 using SchoolSystem.Framework.Core.Commands;
@@ -85,7 +87,9 @@ namespace SchoolSystem.Cli
             IConfigurationProvider configurationProvider = Kernel.Get<IConfigurationProvider>();
             if (configurationProvider.IsTestEnvironment)
             {
-
+                commandFactoryBinding.Intercept().With<StopwatchInterceptor>();
+                studentFactoryBinding.Intercept().With<StopwatchInterceptor>();
+                markFactoryBinding.Intercept().With<StopwatchInterceptor>();
             }
         }
     }
