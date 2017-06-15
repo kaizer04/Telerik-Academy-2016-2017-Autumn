@@ -10,11 +10,11 @@ namespace SchoolSystem.Framework.Contracts
         IStudent CreateStudent(string firstName, string lastName, Grade grade);
     }
 
-    public class StudentFactory : IStudentFactory
-    {
-        public IStudent CreateStudent(string firstName, string lastName, Grade grade)
-        {
-            return new Student(firstName, lastName, grade);
-        }
-    }
+    //public class StudentFactory : IStudentFactory
+    //{
+    //    public IStudent CreateStudent(string firstName, string lastName, Grade grade)
+    //    {
+    //        return new Student(firstName, lastName, grade);
+    //    }
+    //}
 }

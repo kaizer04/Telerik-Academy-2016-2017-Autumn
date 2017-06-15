@@ -10,11 +10,11 @@ namespace SchoolSystem.Framework.Core.Contracts
         ITeacher CreateTeacher(string firstName, string lastName, Subject subject);
     }
 
-    public class TeacherFactory : ITeacherFactory
-    {
-        public ITeacher CreateTeacher(string firstName, string lastName, Subject subject)
-        {
-            return new Teacher(firstName, lastName, subject, new MarkFactory());
-        }
-    }
+    //public class TeacherFactory : ITeacherFactory
+    //{
+    //    public ITeacher CreateTeacher(string firstName, string lastName, Subject subject)
+    //    {
+    //        return new Teacher(firstName, lastName, subject, new MarkFactory());
+    //    }
+    //}
 }

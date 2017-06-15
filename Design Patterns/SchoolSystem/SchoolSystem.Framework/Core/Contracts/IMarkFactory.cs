@@ -10,11 +10,11 @@ namespace SchoolSystem.Framework.Core.Contracts
         IMark CreateMark(Subject subject, float value);
     }
 
-    public class MarkFactory : IMarkFactory
-    {
-        public IMark CreateMark(Subject subject, float value)
-        {
-            return new Mark(subject, value);
-        }
-    }
+    //public class MarkFactory : IMarkFactory
+    //{
+    //    public IMark CreateMark(Subject subject, float value)
+    //    {
+    //        return new Mark(subject, value);
+    //    }
+    //}
 }

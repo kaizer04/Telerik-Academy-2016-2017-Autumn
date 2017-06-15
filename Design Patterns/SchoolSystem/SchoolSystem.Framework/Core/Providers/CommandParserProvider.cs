@@ -23,6 +23,7 @@ namespace SchoolSystem.Framework.Core.Providers
             var commandTypeInfo = this.FindCommand(commandName);
 
             //var command = Activator.CreateInstance(commandTypeInfo) as ICommand;
+            //var command = (ICommand)Activator.CreateInstance(commandTypeInfo);
             var command = this.commandFactory.GetCommand(commandTypeInfo);
 
             return command;
