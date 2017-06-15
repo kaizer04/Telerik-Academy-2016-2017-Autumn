@@ -31,17 +31,17 @@ namespace SchoolSystem.Cli
             //});
             Kernel.Bind<IConfigurationProvider>().To<ConfigurationProvider>();
 
-            Kernel.Bind<IReader>().To<ConsoleReaderProvider>();
-            Kernel.Bind<IWriter>().To<ConsoleWriterProvider>();
-            Kernel.Bind<IParser>().To<CommandParserProvider>();
+            Kernel.Bind<IReader>().To<ConsoleReaderProvider>().InSingletonScope();
+            Kernel.Bind<IWriter>().To<ConsoleWriterProvider>().InSingletonScope();
+            Kernel.Bind<IParser>().To<CommandParserProvider>().InSingletonScope();
 
             Kernel.Bind<IStudent>().To<Student>();
             Kernel.Bind<ITeacher>().To<Teacher>();
             Kernel.Bind<IMark>().To<Mark>();
 
-            Kernel.Bind<IStudentFactory>().ToFactory().InSingletonScope();
+            //Kernel.Bind<IStudentFactory>().ToFactory().InSingletonScope();
             Kernel.Bind<ITeacherFactory>().ToFactory().InSingletonScope();
-            Kernel.Bind<IMarkFactory>().ToFactory();
+            //Kernel.Bind<IMarkFactory>().ToFactory().InSingletonScope();
 
             //Bind<IAddStudent>().To<School>();
             //Bind<IAddTeacher>().To<School>();
@@ -51,7 +51,7 @@ namespace SchoolSystem.Cli
                 .InSingletonScope();
 
 
-            Kernel.Bind<Engine>().ToSelf();
+            Kernel.Bind<Engine>().ToSelf().InSingletonScope();
 
             Kernel.Bind<CreateStudentCommand>().ToSelf().InSingletonScope();
             Kernel.Bind<CreateTeacherCommand>().ToSelf().InSingletonScope();
@@ -62,7 +62,7 @@ namespace SchoolSystem.Cli
             Kernel.Bind<TeacherAddMarkCommand>().ToSelf().InSingletonScope();
 
 
-            Kernel.Bind<ICommandFactory>().ToFactory();
+            //Kernel.Bind<ICommandFactory>().ToFactory();
 
             Kernel.Bind<ICommand>().ToMethod(context =>
             {
@@ -74,15 +74,18 @@ namespace SchoolSystem.Cli
             }).NamedLikeFactoryMethod((ICommandFactory commandFactory) => commandFactory.GetCommand(null));
             //Kernel.Bind<ICommand>().ToMethod(context =>
             //{
-                
+
             //    return null;
             //}).NamedLikeFactoryMethod((ICommandFactory commandFactory) => commandFactory.GetCommand(null));
 
-
+            var commandFactoryBinding = Kernel.Bind<ICommandFactory>().ToFactory();
+            var studentFactoryBinding = Kernel.Bind<IStudentFactory>().ToFactory().InSingletonScope();
+            var markFactoryBinding = Kernel.Bind<IMarkFactory>().ToFactory().InSingletonScope();
 
             IConfigurationProvider configurationProvider = Kernel.Get<IConfigurationProvider>();
             if (configurationProvider.IsTestEnvironment)
             {
+
             }
         }
     }
